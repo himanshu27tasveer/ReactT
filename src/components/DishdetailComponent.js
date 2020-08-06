@@ -62,13 +62,15 @@ function renderComments(dish) {
 const DishDetail = (props) => {
 
     return (
-        <div className="row">
-            <div className="col-12 col-md-5 m-1">
-                {renderDish(props.dish)}
-            </div>
-            <div className="col-12 col-md-5 m-1">
-                {(props.dish) ? <h4>Comments</h4> : ""}
-                {renderComments(props.dish)}
+        <div className="container">
+            <div className="row">
+                <div className="col-12 col-md-5 m-1">
+                    {renderDish(props.dish)}
+                </div>
+                <div className="col-12 col-md-5 m-1">
+                    {(props.dish) ? <h4>Comments</h4> : ""}
+                    {renderComments(props.dish)}
+                </div>
             </div>
         </div>
     );
