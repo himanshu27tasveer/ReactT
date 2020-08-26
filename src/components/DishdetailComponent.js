@@ -8,8 +8,6 @@ import RenderDish from './DishDetailFunctions/RenderDish';
 
 
 
-
-
 const DishDetail = (props) => {
 
     return (
@@ -28,7 +26,10 @@ const DishDetail = (props) => {
             </div>
             <div className="row">
                 <div className="col-12 col-md-5 m-1">
-                    <RenderDish dish={props.dish} />
+                    <RenderDish dish={props.dish}
+                        isLoading={props.isLoading}
+                        errMess={props.errMess}
+                    />
                 </div>
                 <div className="col-12 col-md-5 m-1 text-justify">
                     <RenderComments comments={props.comments}
