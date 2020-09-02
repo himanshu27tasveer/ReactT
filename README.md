@@ -4,6 +4,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `yarn install`
+This will install all the dependencies used in this project.
+Install json-server globally
+by using 
+`yarn add -g json-server`
+Then all the data will be available at [http://localhost:3001](http://localhost:3001).
+
 ### `yarn start`
 
 Runs the app in the development mode.<br />
@@ -11,6 +18,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
+
+### `json-server --watch db.json -d 2000 -p 3001`
+This will run another server on port 3001 with delay 2000ms which is used to fetch images and other data. For using this you must be in another folder named json-sever available in this repository.
 
 ### `yarn test`
 
