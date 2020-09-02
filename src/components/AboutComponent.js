@@ -1,26 +1,55 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { Loading } from './LoadingComponent';
+import { baseUrl } from '../shared/baseUrl';
+import { Stagger, Fade } from 'react-animation-components';
 
 
-function RenderLeader(leaders) {
-    const leaderComp = leaders.map((leader) => {
+function RenderLeader(props) {
+    if (props.isLoading) {
         return (
-            <div key={leader.id} className="mt-5">
-                <Media tag="li">
-                    <Media left middle>
-                        <Media object src={leader.image} alt={leader.name} />
-                    </Media>
-                    <Media body className="ml-5">
-                        <Media heading className="text-justify">{leader.name}</Media>
-                        <p className="mt-2 text-justify">{leader.designation}</p>
-                        <p className="mt-2 text-justify">{leader.description}</p>
-                    </Media>
-                </Media>
+            <div clasName="container">
+                <div className="row">
+                    <Loading />
+                </div>
             </div>
         );
-    });
-    return leaderComp;
+    }
+    else if (props.errMess) {
+        return (
+            <div clasName="container">
+                <div className="row">
+                    <h4>{props.errMess}</h4>
+                </div>
+            </div>
+        );
+    }
+    else {
+
+        return (
+            <Stagger in>
+                {props.leaders.map((leader) => {
+                    return (
+                        <Fade in key={leader.id}>
+                            <div className="mt-5">
+                                <Media tag="li">
+                                    <Media left middle>
+                                        <Media object src={baseUrl + leader.image} alt={leader.name} />
+                                    </Media>
+                                    <Media body className="ml-5">
+                                        <Media heading className="text-justify">{leader.name}</Media>
+                                        <p className="mt-2 text-justify">{leader.designation}</p>
+                                        <p className="mt-2 text-justify">{leader.description}</p>
+                                    </Media>
+                                </Media>
+                            </div>
+                        </Fade>
+                    );
+                })}
+            </Stagger>
+        );
+    }
 }
 
 
@@ -83,7 +112,10 @@ function About(props) {
                 </div>
                 <div className="col-12">
                     <Media list>
-                        {RenderLeader(props.leaders)}
+                        <RenderLeader leaders={props.leaders.leaders}
+                            isLoading={props.leaders.isLoading}
+                            errMess={props.leaders.leadersErrMess}
+                        />
                     </Media>
                 </div>
             </div>

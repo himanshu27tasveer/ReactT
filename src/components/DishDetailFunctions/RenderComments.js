@@ -1,6 +1,6 @@
 import React from 'react';
 import CommentForm from './CommentFormComponent';
-
+import { Fade, Stagger } from 'react-animation-components';
 
 
 function readDate(date) {
@@ -15,22 +15,25 @@ function RenderComments(props) {
             <ul className="list-unstyled">
                 <li><h4>Comments</h4></li>
                 <li>
-                    {
-                        props.comments.map(item => {
+                    <Stagger in>
+                        {props.comments.map((item) => {
                             return (
-                                <div>
+                                <Fade in>
                                     <div key={item.id}>
-                                        <p className="text-justify">{item.comment}
-                                            <br />
-                                            {"-- " + item.author + ", " + readDate(item.date)}
-                                        </p>
+                                        <div>
+                                            <p className="text-justify">{item.comment}
+                                                <br />
+                                                {"-- " + item.author + ", " + readDate(item.date)}
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
+                                </Fade>
                             );
                         })}
+                    </Stagger>
                 </li>
                 <li>
-                    <CommentForm dishId={props.dishId} addComment={props.addComment} />
+                    <CommentForm dishId={props.dishId} postComment={props.postComment} />
                 </li>
             </ul>
         );
