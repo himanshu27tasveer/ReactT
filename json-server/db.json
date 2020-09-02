@@ -201,35 +201,6 @@
       "comment": "It's your birthday, we're gonna party!",
       "author": "25 Cent",
       "date": "2011-12-02T17:57:28.556094Z"
-    },
-    {
-      "dishId": 0,
-      "rating": "3",
-      "author": "Himanshu",
-      "comment": "This is comment test.",
-      "date": "2020-08-31T10:37:56.025Z",
-      "id": 20
-    },
-    {
-      "dishId": {
-        "firstname": "Himanshu ",
-        "lastname": "Mahawar",
-        "telnum": "6377488415",
-        "email": "himanshu27.stu@gmail.com",
-        "agree": true,
-        "contactType": "Tel.",
-        "message": "This is feedback Test."
-      },
-      "date": "2020-08-31T14:36:42.940Z",
-      "id": 21
-    },
-    {
-      "dishId": "hgakjgns",
-      "rating": "kjsngj, vf",
-      "author": "846153",
-      "comment": "sbjksdv@bfkjb.com",
-      "date": "2020-08-31T14:39:53.165Z",
-      "id": 22
     }
   ],
   "promotions": [
