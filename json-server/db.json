@@ -292,28 +292,6 @@
       "message": "afadsfds",
       "date": "2017-12-04T09:41:49.890Z",
       "id": 1
-    },
-    {
-      "firstname": "Himanshu",
-      "lastname": "Mahawar",
-      "telnum": "6377488415",
-      "email": "himanshu27.stu@gmail.com",
-      "agree": true,
-      "contactType": "Email",
-      "message": "This is test.",
-      "date": "2020-09-01T14:49:00.609Z",
-      "id": 2
-    },
-    {
-      "firstname": "HImanshu",
-      "lastname": "Maahwra",
-      "telnum": "569596965",
-      "email": "himanshu27.stu@gmail.com",
-      "agree": true,
-      "contactType": "Tel.",
-      "message": "This is another test",
-      "date": "2020-09-02T06:34:01.927Z",
-      "id": 3
     }
   ]
 }
